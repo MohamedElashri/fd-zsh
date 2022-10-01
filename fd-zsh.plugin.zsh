@@ -11,7 +11,8 @@ fi
 
 # general use aliases 
 alias find='fd'
-alias fd='fd  --list-details --color always ' # list details by default, always colorize output by default
+alias fd='fd  --list-details --color always ' # Always colorize output by default
+alias fd_details='fd  --list-details' # list details
 alias fd_ext='fd --extension' # Filter by file extension, insert <extension> after this command
 alias fd_name='fd --glob' # Filter by file name (default: regular expression)
 alias fd_case='fd --ignore-case' # --ignore-case, -i: Ignore case when searching
