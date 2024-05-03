@@ -3,8 +3,14 @@
 # Author:   Mohamed Elashri
 # Email:    muhammadelashri@gmail.com
 
+if [[ $(alias find) ]]; then
+  unalias find
+fi
+if [[ $(alias fd) ]]; then
+  unalias fd
+fi
 
-if ! (( $+commands[fd] )); then
+if ! which fd > /dev/null; then
   print "zsh-fd-plugin: fd not found on path. Please install fd before using this plugin." >&2
   return 1
 fi
