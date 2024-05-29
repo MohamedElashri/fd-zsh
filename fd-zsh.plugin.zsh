@@ -3,21 +3,15 @@
 # Author:   Mohamed Elashri
 # Email:    muhammadelashri@gmail.com
 
-if [[ $(alias find) ]]; then
-  unalias find
-fi
-if [[ $(alias fd) ]]; then
-  unalias fd
-fi
 
-if ! which fdfind > /dev/null; then
+if ! (( $+commands[fd] )); then
   print "zsh-fd-plugin: fd not found on path. Please install fd before using this plugin." >&2
   return 1
 fi
 
 # general use aliases 
-alias find='fdfind'
-alias fd='fdfind --color always ' # Always colorize output by default
+alias find='fd'
+alias fd='fd --color always ' # Always colorize output by default
 alias fd_details='fd  --list-details' # list details
 alias fd_ext='fd --extension' # Filter by file extension, insert <extension> after this command
 alias fd_name='fd --glob' # Filter by file name (default: regular expression)
